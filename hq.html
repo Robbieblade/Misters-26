@@ -20,9 +20,10 @@
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
-      <a href="trip.html">The Trip</a>
+      <a href="trip.html">Trip</a>
       <a href="hq.html" class="active">HQ</a>
-      <a href="rules.html">Rules &amp; Format</a>
+      <a href="rules.html">Rules</a>
+      <a href="leaderboard.html">Leaderboard</a>
       <a href="porthmadog.html">Porthmadog</a>
       <a href="nefyn.html">Nefyn</a>
       <a href="conwy.html">Conwy</a>
@@ -221,7 +222,6 @@
   </div>
 </section>
 
-
 <!-- ================= PROVISIONS ================= -->
 <section>
   <div class="wrap">
@@ -296,20 +296,20 @@
 /* ============================================================
    HQ GALLERY
    ------------------------------------------------------------
-   Add one entry per photo. `file` is the filename in the site
-   root; `caption` is optional. Set `wide: true` on one or
+   Add one entry per photo. `file` is the filename inside the
+   HQ folder; `caption` is optional. Set `wide: true` on one or
    two of the best shots to make them span the full width.
    ============================================================ */
 var HQ_PHOTOS = [
   { file: 'HQ.avif', caption: 'Aelfor' },
-  { file: 'HQ 2.avif', caption: 'Terrace & dining' },
-  { file: 'HQ 3.avif', caption: 'Kitchen' },
   { file: 'HQ 4.webp', caption: 'Aelfor, Bryn Bugeilydd' },
-  { file: 'HQ 6.webp', caption: 'Hot tub, sea view', wide: true },
-  { file: 'HQ 5.webp', caption: 'The view' },
+  { file: 'HQ 2.avif', caption: 'Terrace & dining' },
   { file: 'HQ 8.avif', caption: 'Outdoor dining' },
+  { file: 'HQ 3.avif', caption: 'Kitchen' },
   { file: 'HQ 9.webp', caption: 'Bathroom' },
-  { file: 'HQ 10.webp', caption: 'Living room' }
+  { file: 'HQ 10.webp', caption: 'Living room' },
+  { file: 'HQ 5.webp', caption: 'The view' },
+  { file: 'HQ 6.webp', caption: 'Hot tub, sea view', wide: true }
 ];
 
 (function () {
@@ -328,7 +328,7 @@ var HQ_PHOTOS = [
     var fig = document.createElement('figure');
     if (p.wide) fig.className = 'wide';
     var img = document.createElement('img');
-    img.src = p.file;
+    img.src = 'HQ/' + p.file;
     img.alt = p.caption || 'Aelfor, Tournament HQ';
     img.loading = 'lazy';
     fig.appendChild(img);

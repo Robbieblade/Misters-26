@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard — Misters 26 · The Dragon Tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Graduate&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="Misters 26 Logo.PNG">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <img src="Misters 26 Logo.PNG" alt="Misters 26 crest">
+      MISTERS <span class="brand-red">26</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="trip.html">Trip</a>
+      <a href="hq.html">HQ</a>
+      <a href="rules.html">Rules</a>
+      <a href="leaderboard.html" class="active">Leaderboard</a>
+      <a href="porthmadog.html">Porthmadog</a>
+      <a href="nefyn.html">Nefyn</a>
+      <a href="conwy.html">Conwy</a>
+      <a href="misters25.html">Misters 25</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Live Scoring · Squabbit</div>
+    <h2 class="ribbon">THE LEADERBOARD</h2>
+    <p class="lede">Scores go in on Squabbit and land here. Everyone needs to be signed up before Friday — nobody wants to be stood on the first tee at Porthmadog downloading an app.</p>
+  </div>
+</section>
+
+<!-- ================= JOIN ================= -->
+<section>
+  <div class="wrap">
+    <div class="join-box">
+      <div class="join-left">
+        <div class="join-eyebrow">Invite Code</div>
+        <div class="join-code" id="join-code">CKHJJB</div>
+        <button class="copy-btn" id="copy-btn" type="button">Copy code</button>
+      </div>
+      <div class="join-right">
+        <h3>NOT SIGNED UP YET?</h3>
+        <p>Tap the button, create an account if you haven't got one, and the tournament is added automatically. If it asks for a code, it's the one on the left.</p>
+        <div class="btn-row" style="justify-content:flex-start; margin-top:16px;">
+          <a class="btn btn-red" href="https://app.squabbitgolf.com/tournament?inviteCode=CKHJJB" target="_blank" rel="noopener">Join Misters 26 on Squabbit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEADERBOARD ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Live</div>
+    <h2 class="ribbon">STANDINGS</h2>
+    <div class="board-frame">
+      <iframe
+        src="https://app.squabbitgolf.com/w/tournament/T6bw59gxR?embed=leaderboard"
+        title="Misters 26 live leaderboard on Squabbit"
+        loading="lazy"
+        allowfullscreen></iframe>
+    </div>
+    <div class="btn-row" style="justify-content:flex-start;">
+      <a class="btn" href="https://app.squabbitgolf.com/w/tournament/T6bw59gxR" target="_blank" rel="noopener">Open full leaderboard on Squabbit</a>
+    </div>
+    <p class="wx-note" style="text-align:left;">Nothing showing? The board fills in once scores are entered. On a phone, the Squabbit app itself will be quicker than this page.</p>
+  </div>
+</section>
+
+<!-- ================= WHAT IT TRACKS ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Reading It</div>
+    <h2 class="ribbon">WHAT THE BOARD SHOWS</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>BETTER BALL STABLEFORD</h3>
+        <p>Three rounds of 18. The better of the two partner scores counts on each hole, and on a Brettini round the best of three.</p>
+      </div>
+      <div class="card">
+        <h3>SHOTS</h3>
+        <p>Handicaps are Rob 15, Sitch 18, Brett 18, Sam 21, Bennett 21, Ferm 24, Teevo 24. The course pages show exactly where each player gets shots.</p>
+      </div>
+      <div class="card gold-card">
+        <h3>NOT ON HERE</h3>
+        <p>Closest to the pin, closest in 3, and the Birdie Club are settled separately. Keep your own record — an eagle takes the whole Birdie Club pot.</p>
+      </div>
+    </div>
+    <div class="btn-row" style="justify-content:flex-start;">
+      <a class="btn" href="rules.html">Full rules and format →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BEFORE FRIDAY ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Housekeeping</div>
+    <h2 class="ribbon">BEFORE WE TRAVEL</h2>
+    <div class="callout">
+      <ul class="tick">
+        <li>All seven signed up and showing in the tournament</li>
+        <li>Handicaps checked against the list above — shout now if yours has moved</li>
+        <li>Teams set: Mailin Men, Sultans of Swing, Championdogs, and Brettini floating</li>
+        <li>Both draws done — split round and Brettini round</li>
+        <li>App downloaded and logged in, not left until the first tee</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-title">MISTERS 26 · THE DRAGON TOUR</div>
+  <div class="foot-sub">Live scoring via Squabbit · Invite code CKHJJB</div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-btn');
+  var code = document.getElementById('join-code');
+  if (!btn || !code) return;
+
+  btn.addEventListener('click', function () {
+    var text = code.textContent.trim();
+    var done = function () {
+      btn.textContent = 'Copied';
+      btn.classList.add('is-done');
+      setTimeout(function () {
+        btn.textContent = 'Copy code';
+        btn.classList.remove('is-done');
+      }, 1800);
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); }
+      catch (e) { btn.textContent = 'Select it manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
