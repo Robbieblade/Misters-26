@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nefyn &amp; District — Misters 26 · The Dragon Tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Graduate&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="Misters 26 Logo.PNG">
+</head>
+<body data-course="nefyn">
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <img src="Misters 26 Logo.PNG" alt="Misters 26 crest">
+      MISTERS <span class="brand-red">26</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="trip.html">The Trip</a>
+      <a href="rules.html">Rules &amp; Format</a>
+      <a href="porthmadog.html">Porthmadog</a>
+      <a href="nefyn.html" class="active">Nefyn</a>
+      <a href="conwy.html">Conwy</a>
+      <a href="misters25.html">Misters 25</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Round 2 · Saturday 29 August</div>
+    <h2 class="ribbon">NEFYN &amp; DISTRICT</h2>
+    <p class="course-address">Morfa Nefyn, Pwllheli, Gwynedd, LL53 6DA</p>
+    <div class="fact-strip" id="course-facts" style="margin-top:24px;"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The Course</div>
+    <h2 class="ribbon">WHAT YOU'RE FACING</h2>
+    <div id="course-summary"></div>
+    <div class="card gold-card" id="course-local" style="margin-top:26px;">
+      <h3>LOCAL KNOWLEDGE</h3>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Hole by Hole</div>
+    <h2 class="ribbon">THE ROUND</h2>
+    <p class="lede" style="margin-bottom:18px;">Pick a hole for the strategy, yardages and stroke index. Choose a player and the card shows where they get shots and what score wins points. Arrow keys work too.</p>
+    <div id="course-missing"></div>
+    <div class="hcp-picker" id="hcp-picker"></div>
+    <div class="hole-selector" id="hole-selector" aria-label="Select a hole"></div>
+    <div class="hole-panel" id="hole-panel"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Conditions</div>
+    <h2 class="ribbon">FORECAST</h2>
+    <div id="tour-weather" data-round="1">
+      <p class="wx-note">Loading the forecast…</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Getting There</div>
+    <h2 class="ribbon">THE DRIVE</h2>
+    <div id="course-directions"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-title">MISTERS 26 · THE DRAGON TOUR</div>
+  <div class="foot-sub">Round 2 · Saturday 29 August · 11:10</div>
+</footer>
+
+<script src="course-data.js"></script>
+<script src="course-page.js"></script>
+<script src="weather.js"></script>
+</body>
+</html>
