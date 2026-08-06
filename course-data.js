@@ -52,7 +52,7 @@ var COURSES = {
     slope: 121,
 
     summary: [
-      'The shortest of the three and the gentlest walk, which is the case for leaving the £40 buggies alone. Par 71 off the yellows at under 6,000 yards, with an out half of 3,058 and a slightly shorter back nine at 2,907.',
+      'The shortest of the three by yardage, but the most elevation and hills of the tour, so do not let the modest length fool you. Buggies are £30 and bookable on the day. Par 71 off the yellows at under 6,000 yards, with an out half of 3,058 and a slightly shorter back nine at 2,907.',
       'The card tells you where the round is decided. Four of the five hardest holes by stroke index sit on the back nine, and the 14th and 15th come at you back to back off SI 1 and SI 3. The front is where you bank shots, particularly the run from the 7th to the 9th where three of the four easiest holes on the course sit together.'
     ],
 
@@ -223,7 +223,7 @@ var COURSES = {
       'Front nine practicalities from the card: safety mesh fence at the 1st tee, and a toilet to the right of the 5th green. Both are immovable obstructions, so you get relief from either.',
       'Sprinkler heads close to the putting green carry additional relief beyond Rule 24-2. Worth knowing on a course where the greens sit in exposed positions.',
       'The Tŷ Coch Inn is on the beach at Porthdinllaen below the course, and is one of the great pub locations anywhere. Post-round, not mid-round.',
-      'Hilliest course of the three at £25 a buggy, comfortably the best value on the tour. On the longer Point combination that £25 is worth more still.'
+      'A flat course and a genuinely nice coastal walk, so most of the group will be fine on foot. Buggies are available at £35 if you want one, especially on the longer Point combination.'
     ],
 
     from: 'Tournament HQ',
