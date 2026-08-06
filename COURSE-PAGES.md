@@ -8,41 +8,30 @@ from `course-data.js` — that is the only file you edit.
 | Course | Tee | Par | Yards | Holes in |
 |---|---|---|---|---|
 | Porthmadog | Yellow | 71 | 5,965 | All 18 |
-| Nefyn (Front + The Point) | Yellow | 71 | 6,309 | None — cards needed |
+| Nefyn (Front + The Point) | Yellow | 71 | 6,309 | All 18 |
 | Conwy | Yellow | 72 | 6,476 | All 18 |
 
 Every yardage, par and stroke index is taken from the club scorecards and
 checked against the printed OUT / IN / TOTAL rows. All three reconcile exactly.
 
-## Still needed: both Nefyn nines
+## Nefyn — card reconciliation
 
-The Point is confirmed, so the round is **Front + The Point: par 71, 6,309
-yards yellow, 6,520 white**. That is 900 yards longer than Front + Old and
-makes Nefyn the second longest card of the tour, not the shortest.
+Front + The Point: par 71, 6,309 yellow, 6,520 white. All eighteen loaded.
 
-The card supplied is the **Old nine**, which is no longer part of the round.
-I need the Front nine and The Point.
+Two figures on the New nine card were corrected to make the totals
+reconcile. Worth checking against the physical card:
 
-Derived from the three combination totals printed on the Old card:
+- **Hole 11 (New 2), Codyn Galch** — read as par 3, 180 white / 176 yellow.
+  As a par 4 of 380/376 the nine totals 3,556 white against a printed
+  3,356, and par 37 against a printed 36.
+- **Hole 12 (New 3), Cae Lôn Fawr** — yellow read as 328, not 326.
 
-| Nine | Par | Yellow | White |
-|---|---|---|---|
-| Front | 35 | 3,048 | 3,164 |
-| The Point (New) | 36 | 3,261 | 3,356 |
+With those two, all six totals match the card exactly and Front + New comes
+to par 71 / 6,309 / 6,520 as printed. The Front nine reconciled first time
+with no changes.
 
-These cross-check exactly against the printed New + Old total (5,624 yellow /
-5,864 white), so the figures are sound. What's missing is hole-by-hole: par,
-yardage and stroke index for each of the eighteen.
-
-The Old nine data is still loaded on the page, clearly labelled as not part
-of the round, since it may still get played as an extra.
-
-### Confirm it in writing
-
-The club's note on the Golfbreaks booking states no tee times on The Point
-after 10:30 on Saturdays and Sundays, and none during school holidays or bank
-holidays. The tee is 11:10 on a Saturday in late August. If clearance came by
-phone, get it in an email so the starter has it too.
+Stroke indexes split cleanly: the Front takes all the evens, The Point takes
+all the odds. Stroke index 1, 3, 5, 7 and 9 are all on The Point.
 
 ## The shots calculator
 
