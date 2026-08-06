@@ -200,16 +200,6 @@ var COURSES = {
     yardsWhite: 6520,
     sss: 71,
 
-    // Neither the Front nine nor The Point card has been supplied yet.
-    // The figures below are derived from the three combination totals
-    // printed on the Old nine card, and cross-check exactly against the
-    // New+Old total, so they are sound.
-    missingFront: true,
-    missingFrontNote: 'The card supplied covers the <strong>Old nine only</strong>, which we are no longer playing as part of the round. ' +
-      'For Front + The Point I need both of those cards. From the combination totals on the Old card, the <strong>Front nine is par 35, 3,048 yards yellow (3,164 white)</strong> ' +
-      'and <strong>The Point is par 36, 3,261 yellow (3,356 white)</strong>. Those figures cross-check exactly against the printed New+Old total, so they are reliable. ' +
-      'Send the two cards and all eighteen holes fill in here.',
-
     summary: [
       'Clifftop golf on the Llŷn Peninsula and the reason this trip exists. The club has 26 holes: a shared Front nine, then either the Old nine or the New nine out on The Point, a finger of land running into the Irish Sea with water on three sides.',
       'We are playing Front and The Point: par 71, 6,309 yards off the yellows. That is 900 yards longer than the Front and Old combination and only 170 short of Conwy, which makes this the second longest card of the tour rather than the shortest.',
@@ -230,75 +220,97 @@ var COURSES = {
     fromAddress: 'Aelfor, Ffordd Isaf, Harlech, LL46 2PR',
     driveNote: 'Around an hour from Harlech, round the top of Cardigan Bay. The A487 is slow in late August holiday traffic and an 11:10 tee gives less slack than it looks. Check it on the morning.',
 
-    // The Old nine is no longer part of the round, but the data is real
-    // and the nine may still get played as an extra. Kept and labelled.
-    holesLabel: 'The Old nine',
-    holesIntro: 'Not part of the tournament round now that The Point is confirmed, but this is the nine we have a card for, and it may still get played as an extra. ' +
-      'The stroke indexes shown apply when the Old nine is paired with the Front nine, so they do not carry over to the Point round.',
-
+    // Front nine + The Point (New nine), from the confirmed scorecard.
     holes: [
-      { no: 1, oldNo: 1, par: 4, yards: 307, yardsWhite: 327, si: 11,
-        name: 'Henblas',
-        tee: 'Short par 4. Three wood or long iron leaves a full wedge.',
-        approach: 'Wedge from around 100.',
-        strategy: 'A gentle opener at SI 11 with a shot for everyone.',
-        note: null },
+      { no: 1, par: 4, yards: 446, yardsWhite: 459, si: 10,
+        name: 'Pant Y Fuches',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 01.JPG', note: null },
 
-      { no: 2, oldNo: 2, par: 3, yards: 129, yardsWhite: 129, si: 15,
-        name: 'Pant',
-        tee: 'Short iron or wedge. Identical off both tees.',
-        approach: null,
-        strategy: 'At 129 yards the wind is the entire hole. Take the club the flag says, not the club the yardage says.',
-        note: null },
+      { no: 2, par: 4, yards: 349, yardsWhite: 366, si: 4,
+        name: 'Borthwen',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 02.JPG', note: null },
 
-      { no: 3, oldNo: 3, par: 3, yards: 150, yardsWhite: 157, si: 5,
-        name: 'T\u0177 Coch',
-        tee: 'Mid iron. A seven iron number.',
-        approach: null,
-        strategy: 'Stroke index 5 on a 150 yard par 3 is a warning. The local rules confirm the \'Pot\' water hazard is in play here and you may not play from it.',
-        note: null },
+      { no: 3, par: 4, yards: 367, yardsWhite: 385, si: 8,
+        name: 'Pwll Gwyllt',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 03.JPG', note: null },
 
-      { no: 4, oldNo: 4, par: 4, yards: 405, yardsWhite: 411, si: 1,
-        name: 'Pendraw',
-        tee: 'Stroke index 1 and the only hole over 400 yards on this nine. Driver.',
-        approach: 'Long iron or hybrid.',
-        strategy: 'The hardest hole on the Old nine. Play for net bogey and take anything better.',
-        note: null },
+      { no: 4, par: 5, yards: 464, yardsWhite: 472, si: 12,
+        name: 'Hirdir',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 04.JPG', note: null },
 
-      { no: 5, oldNo: 5, par: 3, yards: 155, yardsWhite: 158, si: 13,
-        name: 'Bad Achub',
-        tee: 'Mid iron.',
-        approach: null,
-        strategy: 'Welsh for lifeboat. The local rules note the fence surrounding Lifeboat Bay is the one boundary on the property that is not out of bounds.',
-        note: null },
+      { no: 5, par: 3, yards: 125, yardsWhite: 152, si: 18,
+        name: 'Parciau',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 05.JPG', note: null },
 
-      { no: 6, oldNo: 6, par: 4, yards: 317, yardsWhite: 320, si: 7,
-        name: 'Pen Cei',
-        tee: 'Short par 4 at 317. Position over power.',
-        approach: 'A wedge or short iron.',
-        strategy: 'SI 7 despite the length, so there is trouble the yardage does not show.',
-        note: null },
+      { no: 6, par: 5, yards: 431, yardsWhite: 441, si: 2,
+        name: 'Gwynt Teg',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 06.JPG', note: null },
 
-      { no: 7, oldNo: 7, par: 3, yards: 149, yardsWhite: 180, si: 9,
-        name: 'Pot',
-        tee: '149 off the yellow and 180 off the white, the biggest gap on this nine.',
-        approach: null,
-        strategy: 'Named after the water hazard, which is in play here and cannot be played from. The hole tells you where not to go.',
-        note: null },
+      { no: 7, par: 4, yards: 397, yardsWhite: 404, si: 6,
+        name: 'Yr Eifl',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 07.JPG', note: null },
 
-      { no: 8, oldNo: 8, par: 5, yards: 477, yardsWhite: 502, si: 3,
-        name: 'Roced',
-        tee: 'The only par 5 on the nine. Driver.',
-        approach: 'Reachable in two at 477, but Annie\'s Gully runs down the right hand side half way along. The left side is the play.',
-        strategy: 'The biggest scoring chance on this nine, though the gully makes the aggressive line expensive.',
-        note: null },
+      { no: 8, par: 4, yards: 316, yardsWhite: 325, si: 16,
+        name: 'Dyffryn',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 08.JPG', note: null },
 
-      { no: 9, oldNo: 9, par: 4, yards: 274, yardsWhite: 324, si: 17,
-        name: 'Adref',
-        tee: 'Homeward. 274 off the yellows brings the green into range.',
-        approach: 'Short wedge if you lay back.',
-        strategy: 'The easiest hole on the nine and short enough to finish on a birdie.',
-        note: null }
+      { no: 9, par: 3, yards: 153, yardsWhite: 160, si: 14,
+        name: 'L\u00f4n Penrhyn Bach',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 09.JPG', note: null },
+
+      { no: 10, par: 4, yards: 397, yardsWhite: 407, si: 5,
+        name: 'Cae Gwynt',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 10.JPG', note: null },
+
+      { no: 11, par: 3, yards: 176, yardsWhite: 180, si: 13,
+        name: 'Odyn Galch',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 11.JPG', note: null },
+
+      { no: 12, par: 4, yards: 326, yardsWhite: 352, si: 9,
+        name: 'Cae L\u00f4n Fawr',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 12.JPG', note: null },
+
+      { no: 13, par: 4, yards: 332, yardsWhite: 344, si: 17,
+        name: 'Cae\u2019r Urdd',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 13.JPG', note: null },
+
+      { no: 14, par: 4, yards: 393, yardsWhite: 401, si: 3,
+        name: 'Cwmstir',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 14.JPG', note: null },
+
+      { no: 15, par: 4, yards: 396, yardsWhite: 407, si: 1,
+        name: 'Abergeirech',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 15.JPG', note: null },
+
+      { no: 16, par: 4, yards: 363, yardsWhite: 372, si: 7,
+        name: 'Gwylwyr',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 16.JPG', note: null },
+
+      { no: 17, par: 5, yards: 502, yardsWhite: 514, si: 11,
+        name: 'Cwm Eithin',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 17.JPG', note: null },
+
+      { no: 18, par: 4, yards: 374, yardsWhite: 379, si: 15,
+        name: 'Golygfa',
+        tee: null, approach: null, strategy: null,
+        img: 'Nefyn Hole 18.JPG', note: null }
     ]
   },
 
@@ -345,109 +357,109 @@ var COURSES = {
         tee: 'A kind opener by this course\'s standards. Driver or three wood.',
         approach: 'Short to mid iron from around 130 to 150.',
         strategy: 'SI 13 is as gentle as Conwy gets on the front nine. Bank a par before the course starts asking questions.',
-        note: null },
+        img: 'Conwy Hole 01.JPG', note: null },
 
       { no: 2, par: 3, yards: 143, yardsWhite: 152, si: 15,
         tee: 'Wedge or short iron.',
         approach: null,
         strategy: 'One of only two holes on the front nine outside the top twelve by index. Take the green.',
-        note: null },
+        img: 'Conwy Hole 02.JPG', note: null },
 
       { no: 3, par: 4, yards: 320, yardsWhite: 333, si: 9,
         tee: 'The shortest par 4 on the course at 320. A three wood or long iron takes trouble out of play and leaves a full wedge.',
         approach: 'Wedge in from around 100.',
         strategy: 'Short and SI 9, with a shot for everyone. The last easy hole for a while, because the next five run at index 5, 1, 17, 7 and 3.',
-        note: null },
+        img: 'Conwy Hole 03.JPG', note: null },
 
       { no: 4, par: 4, yards: 383, yardsWhite: 393, si: 5,
         tee: 'Driver. The start of the hard stretch.',
         approach: 'Mid iron from around 150 to 170.',
         strategy: 'SI 5 and the first of the genuinely difficult holes. Everyone has a shot, so net par is a good hole.',
-        note: null },
+        img: 'Conwy Hole 04.JPG', note: null },
 
       { no: 5, par: 4, yards: 435, yardsWhite: 455, si: 1,
         tee: 'Stroke index 1, the longest par 4 on the course, and 20 yards longer again off the whites. Driver, and you still need a second good one.',
         approach: 'Fairway wood or hybrid for most of this group even after a solid drive.',
         strategy: 'The hardest hole of the tour. The 21s and 24s get two shots and should treat it as a par 6. Front of the green, take the bogey, walk to the 6th tee having lost nothing.',
-        note: null },
+        img: 'Conwy Hole 05.JPG', note: null },
 
       { no: 6, par: 3, yards: 167, yardsWhite: 178, si: 17,
         tee: 'Mid iron. A six iron number off the yellows.',
         approach: null,
         strategy: 'Rated the second easiest hole on the card and arriving immediately after the hardest. Only the 21s and 24s get a shot, so par is close to compulsory.',
-        note: null },
+        img: 'Conwy Hole 06.JPG', note: null },
 
       { no: 7, par: 4, yards: 428, yardsWhite: 439, si: 7,
         tee: 'Driver. The second of three long par 4s in a row.',
         approach: 'Long iron or hybrid.',
         strategy: 'The 5th, 7th and 8th are three of the four hardest holes on the card. Everyone gets a shot here, so net bogey is not a loss.',
-        note: null },
+        img: 'Conwy Hole 07.JPG', note: null },
 
       { no: 8, par: 4, yards: 429, yardsWhite: 441, si: 3,
         tee: 'Stroke index 3 at 429 yards. Driver.',
         approach: 'Long approach again. Take the front and putt from distance.',
         strategy: 'The 24s get two shots. Trying to force par here is how good rounds get wrecked. Take five and move on.',
-        note: null },
+        img: 'Conwy Hole 08.JPG', note: null },
 
       { no: 9, par: 5, yards: 521, yardsWhite: 531, si: 11,
         tee: 'The first par 5 of the day and a welcome sight after the 7th and 8th. Driver.',
         approach: 'A three-shot hole for most. Lay up to a full wedge number.',
         strategy: 'SI 11 with a shot for everyone. The scoring stretch starts here and runs to the 14th. Survive the front nine and there are points on the back.',
-        note: null },
+        img: 'Conwy Hole 09.JPG', note: null },
 
       { no: 10, par: 5, yards: 526, yardsWhite: 536, si: 10,
         tee: 'Back to back par 5s. Driver.',
         approach: 'The longest hole on the course at 526. Three shots, and lay up sensibly.',
         strategy: 'Everyone has a shot, so net par 6 on the longest hole on the card is very achievable.',
-        note: null },
+        img: 'Conwy Hole 10.JPG', note: null },
 
       { no: 11, par: 4, yards: 376, yardsWhite: 385, si: 4,
         tee: 'Driver. The hardest hole on the back nine.',
         approach: 'Mid iron from around 150.',
         strategy: 'SI 4 sitting in the middle of the easiest stretch of the course. Do not let it catch you cold between the two par 5s.',
-        note: null },
+        img: 'Conwy Hole 11.JPG', note: null },
 
       { no: 12, par: 5, yards: 494, yardsWhite: 503, si: 6,
         tee: 'The shortest par 5 on the card at 494, stroke index 6. Driver.',
         approach: 'Genuinely reachable in two with a good drive. The best eagle chance of the tour, which matters, because an eagle takes the entire Birdie Club pot.',
         strategy: 'A par 5 at SI 6 means everyone gets a shot and the higher handicaps get two. If you are chasing on Sunday, this is the hole.',
-        note: null },
+        img: 'Conwy Hole 12.JPG', note: null },
 
       { no: 13, par: 3, yards: 168, yardsWhite: 174, si: 12,
         tee: 'Mid iron.',
         approach: null,
         strategy: 'A breather between two par 5s. Take the green and keep the momentum.',
-        note: null },
+        img: 'Conwy Hole 13.JPG', note: null },
 
       { no: 14, par: 5, yards: 484, yardsWhite: 498, si: 16,
         tee: 'The last par 5, and the softest hole on the card by combination: 484 yards at stroke index 16. Driver.',
         approach: 'Short enough to have a go in two.',
         strategy: 'A sub-500 par 5 at SI 16 is the best birdie opportunity of the tournament. Only the 21s and 24s get a shot, so take the four rather than relying on it.',
-        note: null },
+        img: 'Conwy Hole 14.JPG', note: null },
 
       { no: 15, par: 3, yards: 147, yardsWhite: 153, si: 18,
         tee: 'Wedge or short iron.',
         approach: null,
         strategy: 'The easiest hole on the course. Nobody gets a shot except the 21s and 24s, so par is the expectation with three to play.',
-        note: null },
+        img: 'Conwy Hole 15.JPG', note: null },
 
       { no: 16, par: 4, yards: 353, yardsWhite: 364, si: 8,
         tee: 'Driver or three wood. A shorter par 4 to start the closing stretch.',
         approach: 'Short iron from around 120 to 140.',
         strategy: 'SI 8 with a shot for everyone. The last straightforward hole before the two that decide it.',
-        note: null },
+        img: 'Conwy Hole 16.JPG', note: null },
 
       { no: 17, par: 4, yards: 379, yardsWhite: 388, si: 2,
         tee: 'Stroke index 2 at only 379 yards, which means the difficulty is positional. Fairway is worth more than distance.',
         approach: 'Mid iron. Take the middle of the green.',
         strategy: 'Second hardest hole on the course, second from home, with the tournament almost certainly still live. The 21s and 24s get two shots. Whoever is leading takes their five and makes the chasers do something.',
-        note: null },
+        img: 'Conwy Hole 17.JPG', note: null },
 
       { no: 18, par: 4, yards: 364, yardsWhite: 376, si: 14,
         tee: 'The last hole of the Dragon Tour. Driver or three wood.',
         approach: 'Short to mid iron into the closing green.',
         strategy: 'SI 14 and 364 yards. A fair finishing hole rather than a brute, which is exactly what you want when it comes down to the final green. It did last year.',
-        note: null }
+        img: 'Conwy Hole 18.JPG', note: null }
     ]
   }
 };
