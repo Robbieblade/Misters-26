@@ -52,13 +52,14 @@ var COURSES = {
     slope: 121,
 
     summary: [
-      'The shortest of the three by yardage, but the most elevation and hills of the tour, so do not let the modest length fool you. Buggies are £30 and bookable on the day. Par 71 off the yellows at under 6,000 yards, with an out half of 3,058 and a slightly shorter back nine at 2,907.',
+      'The shortest card of the tour at under 6,000 yards off the yellows, but the most demanding walk: the most elevation and hills of the three courses. Par 71, with an out half of 3,058 and a slightly shorter back nine at 2,907.',
       'The card tells you where the round is decided. Four of the five hardest holes by stroke index sit on the back nine, and the 14th and 15th come at you back to back off SI 1 and SI 3. The front is where you bank shots, particularly the run from the 7th to the 9th where three of the four easiest holes on the course sit together.'
     ],
 
     localKnowledge: [
       'Two par 5s back to back at the 7th and 8th, both under 500 yards off the yellows, stroke index 14 and 10. That is the birdie window and everyone in the group gets a shot on both.',
       'The 12th is 275 yards off the yellow and 351 off the white, the biggest tee-to-tee gap on the card by some way. Confirm which markers we are on before anyone pulls driver.',
+      'Buggies are £30 and bookable on the day. This is the hilliest of the three courses by some way, so it is the one round where the money is worth spending — and it happens to be the cheapest of the three.',
       'First round of the tour after a four-hour drive. Ten minutes on the putting green beats ten minutes on the range.',
       'Late tee time means finishing around 18:30 with the light going. Keep the pace up.'
     ],
@@ -213,7 +214,7 @@ var COURSES = {
       'Front nine practicalities from the card: safety mesh fence at the 1st tee, and a toilet to the right of the 5th green. Both immovable obstructions, so relief is available.',
       'All distances on the card are measured to the <strong>centre of the green</strong>, not the front. On an exposed links with run-out, that is worth a club.',
       'The T\u0177 Coch Inn sits on the beach at Porthdinllaen below the course. Post-round, not mid-round.',
-      'A flat course and a genuinely nice coastal walk, so most of the group will be fine on foot. Buggies are available at £35 if you want one.'
+      'Flat course and a nice coastal walk, so the £35 buggy is a luxury rather than a need. Save it for Porthmadog.'
     ],
 
     from: 'Tournament HQ',
@@ -361,7 +362,7 @@ var COURSES = {
       'The scoring stretch is the 9th through the 14th: three par 5s, and only one hole inside the top ten by stroke index. If you are chasing on Sunday, those six holes are where you make your move.',
       'The front nine is where it gets taken away. The 5th is SI 1 at 435 yards, the 8th is SI 3 at 429 and the 7th is SI 7 at 428 — three long par 4s in a row from the 7th.',
       'The 17th is stroke index 2 at only 379 yards, so it is not length doing the damage. Second to last hole, hardest but one on the card, with the tournament likely still live.',
-      'Flat walking, so the £40 buggy is a luxury rather than a need.',
+      'Very flat, and another solid coastal walk. At £40 it is the dearest buggy of the tour on the course that needs one least.',
       'If Option 3 is happening, cars come to Conwy loaded with clubs, evening attire and all seven players. Shower and change at the clubhouse, then ten minutes into Llandudno.'
     ],
 
