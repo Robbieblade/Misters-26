@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Quiz — Misters 26 · The Dragon Tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Graduate&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="Misters 26 Logo.PNG">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <img src="Misters 26 Logo.PNG" alt="Misters 26 crest">
+      MISTERS <span class="brand-red">26</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="trip.html">Trip</a>
+      <a href="hq.html">HQ</a>
+      <a href="rules.html">Rules</a>
+      <a href="teams.html">Teams</a>
+      <a href="quiz.html" class="active">Quiz</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="porthmadog.html">Porthmadog</a>
+      <a href="nefyn.html">Nefyn</a>
+      <a href="conwy.html">Conwy</a>
+      <a href="misters25.html">Misters 25</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Twenty questions · Every answer taken from the pre-trip questionnaire</div>
+    <h2 class="ribbon">HOW WELL DO YOU KNOW THE LADS?</h2>
+    <p class="lede">All seven filled in a form before the tour. What they are dreading, what they would bet a pound on, what they think of their own golf, and who they have got their eye on. Everything below is exactly what they wrote.</p>
+    <p class="lede">Twenty questions. No going back once you have answered. Scored like a round of golf, so under par is the aim.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <!-- ---------- Start ---------- -->
+    <div id="quiz-start">
+      <div class="callout gold">
+        <div class="co-title">BEFORE YOU START</div>
+        <p>There are no prizes, no entry fee and no appeals process. Your score is not stored anywhere, so if you get one of these badly wrong the only person who knows is you — until you screenshot it into the group chat, which you will.</p>
+      </div>
+      <div class="btn-row" style="justify-content:flex-start;">
+        <button class="btn btn-red" id="btn-start" type="button">Tee off</button>
+      </div>
+    </div>
+
+    <!-- ---------- Quiz ---------- -->
+    <div id="quiz-play" hidden>
+      <div class="quiz-bar">
+        <div class="qb-count">Hole <span id="q-num">1</span> of 20</div>
+        <div class="qb-track"><div class="qb-fill" id="q-fill"></div></div>
+        <div class="qb-score">Score <span id="q-score">0</span></div>
+      </div>
+
+      <div class="quiz-card">
+        <p class="quiz-q" id="q-text"></p>
+        <div class="quiz-opts" id="q-opts"></div>
+        <div class="quiz-feedback" id="q-feedback" hidden>
+          <div class="qf-verdict" id="qf-verdict"></div>
+          <p class="qf-note" id="qf-note"></p>
+          <button class="btn btn-red" id="btn-next" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- Result ---------- -->
+    <div id="quiz-result" hidden>
+      <div class="result-card">
+        <div class="rc-eyebrow">Final score</div>
+        <div class="rc-score"><span id="rc-num">0</span><span class="rc-of">/ 20</span></div>
+        <div class="rc-band" id="rc-band"></div>
+        <p class="rc-line" id="rc-line"></p>
+      </div>
+      <div class="btn-row" style="justify-content:flex-start;">
+        <button class="btn btn-red" id="btn-again" type="button">Play again</button>
+        <a class="btn" href="teams.html">Read up on the lads</a>
+      </div>
+      <h3 class="sub-ribbon">Your card</h3>
+      <div id="rc-review"></div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-title">MISTERS 26 · THE DRAGON TOUR</div>
+  <div class="foot-sub">Answers straight from the questionnaire · No appeals</div>
+</footer>
+
+<script src="quiz-data.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var idx = 0, score = 0, picks = [];
+  var $ = function (id) { return document.getElementById(id); };
+
+  var elStart = $('quiz-start'), elPlay = $('quiz-play'), elResult = $('quiz-result');
+
+  function render() {
+    var item = QUIZ[idx];
+    $('q-num').textContent = idx + 1;
+    $('q-score').textContent = score;
+    $('q-fill').style.width = ((idx) / QUIZ.length * 100) + '%';
+    $('q-text').textContent = item.q;
+
+    var opts = $('q-opts');
+    opts.innerHTML = '';
+    item.o.forEach(function (text, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'quiz-opt';
+      b.innerHTML = '<span class="qo-letter">' + 'ABCD'[i] + '</span><span>' + text + '</span>';
+      b.addEventListener('click', function () { answer(i, b); });
+      opts.appendChild(b);
+    });
+
+    $('q-feedback').hidden = true;
+  }
+
+  function answer(choice, btn) {
+    var item = QUIZ[idx];
+    var right = choice === item.a;
+    picks.push({ q: item.q, chosen: item.o[choice], correct: item.o[item.a], right: right });
+
+    Array.prototype.forEach.call($('q-opts').children, function (b, i) {
+      b.disabled = true;
+      if (i === item.a) b.classList.add('is-right');
+      if (i === choice && !right) b.classList.add('is-wrong');
+    });
+
+    if (right) { score++; $('q-score').textContent = score; }
+
+    var v = $('qf-verdict');
+    v.textContent = right ? 'In the hole.' : 'Out of bounds.';
+    v.className = 'qf-verdict ' + (right ? 'is-right' : 'is-wrong');
+    $('qf-note').textContent = item.n;
+    $('btn-next').textContent = (idx === QUIZ.length - 1) ? 'See your card' : 'Next';
+    $('q-feedback').hidden = false;
+  }
+
+  function finish() {
+    elPlay.hidden = true;
+    elResult.hidden = false;
+
+    $('rc-num').textContent = score;
+    var band = BANDS.find(function (b) { return score >= b.min; });
+    $('rc-band').textContent = band.name;
+    $('rc-line').textContent = band.line;
+
+    var rev = $('rc-review');
+    rev.innerHTML = '';
+    picks.forEach(function (p, i) {
+      var row = document.createElement('div');
+      row.className = 'rev-row ' + (p.right ? 'is-right' : 'is-wrong');
+      row.innerHTML =
+        '<div class="rev-no">' + (i + 1) + '</div>' +
+        '<div class="rev-body"><div class="rev-q">' + p.q + '</div>' +
+        (p.right
+          ? '<div class="rev-a">' + p.correct + '</div>'
+          : '<div class="rev-a">You said <s>' + p.chosen + '</s> — it was <strong>' + p.correct + '</strong></div>') +
+        '</div>';
+      rev.appendChild(row);
+    });
+    window.scrollTo({ top: elResult.offsetTop - 80, behavior: 'smooth' });
+  }
+
+  $('btn-start').addEventListener('click', function () {
+    elStart.hidden = true;
+    elPlay.hidden = false;
+    render();
+  });
+
+  $('btn-next').addEventListener('click', function () {
+    if (idx === QUIZ.length - 1) { finish(); return; }
+    idx++;
+    render();
+  });
+
+  $('btn-again').addEventListener('click', function () {
+    idx = 0; score = 0; picks = [];
+    elResult.hidden = true;
+    elPlay.hidden = false;
+    render();
+    window.scrollTo({ top: elPlay.offsetTop - 100, behavior: 'smooth' });
+  });
+
+})();
+</script>
+
+</body>
+</html>
