@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2027 Dates — Misters · The Tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Graduate&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="Misters 26 Logo.PNG">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <img src="Misters 26 Logo.PNG" alt="Misters crest">
+      MISTERS <span class="brand-red">26</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="dates-2027.html" class="active">2027</a>
+      <a href="results.html">Results</a>
+      <a href="trip.html">Trip</a>
+      <a href="hq.html">HQ</a>
+      <a href="barmouth.html">Barmouth</a>
+      <a href="rules.html">Format</a>
+      <a href="course-rules.html">On The Course</a>
+      <a href="teams.html">Teams</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="courses.html">Courses</a>
+      <a href="misters25.html">Misters 25</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Misters 27 · The European Leg</div>
+    <h2 class="ribbon">WHEN CAN YOU GO?</h2>
+    <p class="lede">Mark up the calendar below for 17 May to 1 September 2027. Pick a colour, then tap or drag across the days. It takes about a minute.</p>
+
+    <div class="grid-3" style="margin-top:24px;">
+      <div class="card" style="border-top-color:#C0392B;">
+        <h3 style="color:#8E2A24;">RED — CAN'T DO IT</h3>
+        <p>Wedding, holiday, work trip, anything immovable. If it's red, we won't book it.</p>
+      </div>
+      <div class="card" style="border-top-color:#C9951F;">
+        <h3 style="color:#8A6512;">AMBER — DOABLE</h3>
+        <p>Would take some negotiating, but you could make it work if it's the only option.</p>
+      </div>
+      <div class="card" style="border-top-color:#4E8B4A;">
+        <h3 style="color:#376634;">GREEN — GOOD</h3>
+        <p>No problem at all. The more green, the easier this gets.</p>
+      </div>
+    </div>
+
+    <div class="callout gold" style="margin-top:26px;">
+      <div class="co-title">TWO OBVIOUS WINDOWS — BE HONEST ABOUT THESE</div>
+      <p>The bank holiday weekends are <strong>Fri 28 – Mon 31 May</strong> and <strong>Fri 27 – Mon 30 August</strong>. The August one is the straight repeat of the Dragon Tour. They're outlined in gold on the calendar.</p>
+      <p>They're also the two most expensive and most booked-up weekends of the summer, so if a normal weekend works just as well for you, say so.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE TOOL ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Step one</div>
+    <h2 class="ribbon">WHO ARE YOU?</h2>
+    <div class="name-row" id="name-row"></div>
+    <p class="wx-note" style="text-align:left;" id="name-note">Tap your name. Your marks save in this browser as you go, so you can come back to it.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Step two</div>
+    <h2 class="ribbon">PAINT THE CALENDAR</h2>
+
+    <div class="brush-bar" id="brush-bar">
+      <span class="bb-label">Brush</span>
+      <button class="brush brush-R" type="button" data-v="R"><span class="bk"></span>Red</button>
+      <button class="brush brush-A" type="button" data-v="A"><span class="bk"></span>Amber</button>
+      <button class="brush brush-G is-on" type="button" data-v="G"><span class="bk"></span>Green</button>
+      <button class="brush brush-X" type="button" data-v=""><span class="bk"></span>Clear</button>
+    </div>
+
+    <div class="quick-bar">
+      <span class="bb-label">Quick fill</span>
+      <button class="qbtn" type="button" data-q="all-G">All green</button>
+      <button class="qbtn" type="button" data-q="all-R">All red</button>
+      <button class="qbtn" type="button" data-q="wknd-G">Fri–Mon green</button>
+      <button class="qbtn" type="button" data-q="week-R">Tue–Thu red</button>
+      <button class="qbtn" type="button" data-q="clear">Clear everything</button>
+    </div>
+
+    <p class="wx-note" style="text-align:left;">Tap a single day, or press and drag to sweep across a run of them. The arrow at the start of each week paints the whole week. <strong>Fastest route:</strong> hit <em>Fri–Mon green</em> then <em>Tue–Thu red</em>, and just redden the weekends you genuinely can't do.</p>
+
+    <div class="cal" id="cal"></div>
+  </div>
+</section>
+
+<!-- ================= SUMMARY ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Step three</div>
+    <h2 class="ribbon">YOUR ANSWER</h2>
+
+    <div class="sum-strip" id="sum-strip"></div>
+
+    <div id="windows-box" style="margin-top:26px;"></div>
+
+    <div class="callout" id="send-box" style="margin-top:28px;">
+      <div class="co-title">SEND IT IN</div>
+      <p id="send-help">Once you're happy with the calendar, send it over. You can come back and send again if anything changes — the latest one wins.</p>
+      <div class="btn-row" style="justify-content:flex-start; margin-top:16px;">
+        <button class="btn btn-red" id="btn-send" type="button">Send my dates</button>
+        <button class="btn" id="btn-copy" type="button">Copy for the group chat</button>
+      </div>
+      <p class="wx-note" style="text-align:left; margin-top:14px;" id="send-status"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-title">MISTERS 27 · THE EUROPEAN LEG</div>
+  <div class="foot-sub">17 May – 1 September 2027 · Red, amber, green</div>
+</footer>
+
+<script>
+/* ============================================================
+   MISTERS 27 — AVAILABILITY
+   ------------------------------------------------------------
+   SETUP (Rob): paste the Apps Script web app URL between the
+   quotes below, then redeploy the site. Instructions are in
+   DATES-2027-SETUP.md.
+   ============================================================ */
+var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxzbNZ_wp21_5x3JXa_9WJyvx-i8gCzMgI5cPzPRF-PZJ1SDuQ08L8BNA9RtXnDflUHAQ/exec';
+
+var PLAYERS = ['Rob', 'Sam', 'John', 'Ferm', 'Teevo', 'Phil', 'Brett'];
+
+var START = '2027-05-17';
+var END   = '2027-09-01';
+
+/* Bank holiday Fri–Mon windows, highlighted on the grid */
+var FLAGGED = ['2027-05-28','2027-05-29','2027-05-30','2027-05-31',
+               '2027-08-27','2027-08-28','2027-08-29','2027-08-30'];
+
+(function () {
+  'use strict';
+
+  var MONTHS = ['January','February','March','April','May','June',
+                'July','August','September','October','November','December'];
+  var DOW = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------- build the date list ---------- */
+  function iso(d) {
+    return d.getFullYear() + '-' +
+           String(d.getMonth() + 1).padStart(2, '0') + '-' +
+           String(d.getDate()).padStart(2, '0');
+  }
+
+  var days = [];
+  (function () {
+    var d = new Date(START + 'T12:00:00');
+    var end = new Date(END + 'T12:00:00');
+    while (d <= end) {
+      days.push({
+        iso: iso(d),
+        date: new Date(d),
+        dom: d.getDate(),
+        month: d.getMonth(),
+        dow: (d.getDay() + 6) % 7   // 0 = Monday
+      });
+      d.setDate(d.getDate() + 1);
+    }
+  })();
+
+  var state = {};          // iso -> 'R' | 'A' | 'G'
+  var brush = 'G';
+  var who = '';
+  var painting = false;
+
+  /* ---------- storage ---------- */
+  function storeKey() { return 'misters27:' + (who || 'anon'); }
+
+  function save() {
+    try { localStorage.setItem(storeKey(), JSON.stringify(state)); } catch (e) {}
+    try { if (who) localStorage.setItem('misters27:who', who); } catch (e) {}
+  }
+
+  function load() {
+    try {
+      var raw = localStorage.getItem(storeKey());
+      state = raw ? JSON.parse(raw) : {};
+    } catch (e) { state = {}; }
+  }
+
+  /* ---------- name picker ---------- */
+  function buildNames() {
+    var row = $('name-row');
+    PLAYERS.forEach(function (p) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'name-btn';
+      b.textContent = p;
+      b.addEventListener('click', function () {
+        who = p;
+        load();
+        Array.prototype.forEach.call(row.children, function (x) {
+          x.classList.toggle('is-on', x === b);
+        });
+        paint();
+        summarise();
+        $('name-note').textContent = 'Marking up as ' + p + '. Your marks save in this browser as you go.';
+      });
+      row.appendChild(b);
+    });
+
+    try {
+      var saved = localStorage.getItem('misters27:who');
+      if (saved && PLAYERS.indexOf(saved) !== -1) {
+        var idx = PLAYERS.indexOf(saved);
+        row.children[idx].click();
+      }
+    } catch (e) {}
+  }
+
+  /* ---------- calendar ---------- */
+  function buildCal() {
+    var cal = $('cal');
+    var weeks = [];
+    var cur = null;
+
+    days.forEach(function (day) {
+      if (!cur || day.dow === 0) {
+        cur = { days: [] };
+        weeks.push(cur);
+      }
+      cur.days.push(day);
+    });
+
+    var lastMonth = -1;
+
+    weeks.forEach(function (wk) {
+      var firstMonth = wk.days[0].month;
+      if (firstMonth !== lastMonth) {
+        var band = document.createElement('div');
+        band.className = 'cal-month';
+        band.textContent = MONTHS[firstMonth] + ' 2027';
+        cal.appendChild(band);
+        lastMonth = firstMonth;
+      }
+
+      var row = document.createElement('div');
+      row.className = 'cal-week';
+
+      var grab = document.createElement('button');
+      grab.type = 'button';
+      grab.className = 'wk-grab';
+      grab.innerHTML = '&rsaquo;';
+      grab.title = 'Paint this whole week';
+      grab.addEventListener('click', function () {
+        wk.days.forEach(function (d) { setDay(d.iso, brush); });
+        paint(); summarise(); save();
+      });
+      row.appendChild(grab);
+
+      var strip = document.createElement('div');
+      strip.className = 'wk-days';
+
+      // pad the first partial week
+      for (var i = 0; i < wk.days[0].dow; i++) {
+        var sp = document.createElement('div');
+        sp.className = 'day is-pad';
+        strip.appendChild(sp);
+      }
+
+      wk.days.forEach(function (d) {
+        var c = document.createElement('div');
+        c.className = 'day';
+        if (d.dow >= 5) c.classList.add('is-wknd');
+        if (FLAGGED.indexOf(d.iso) !== -1) c.classList.add('is-flag');
+        c.dataset.iso = d.iso;
+        c.innerHTML = '<span class="d-dow">' + DOW[d.dow] + '</span>' +
+                      '<span class="d-num">' + d.dom + '</span>';
+        c.addEventListener('pointerdown', function (ev) {
+          ev.preventDefault();
+          painting = true;
+          setDay(d.iso, brush);
+          paint(); summarise();
+        });
+        c.addEventListener('pointerenter', function () {
+          if (!painting) return;
+          setDay(d.iso, brush);
+          paint(); summarise();
+        });
+        strip.appendChild(c);
+      });
+
+      // pad the tail
+      var tail = 6 - wk.days[wk.days.length - 1].dow;
+      for (var j = 0; j < tail; j++) {
+        var sp2 = document.createElement('div');
+        sp2.className = 'day is-pad';
+        strip.appendChild(sp2);
+      }
+
+      row.appendChild(strip);
+      cal.appendChild(row);
+    });
+
+    document.addEventListener('pointerup', function () {
+      if (painting) { painting = false; save(); }
+    });
+    cal.addEventListener('dragstart', function (e) { e.preventDefault(); });
+  }
+
+  function setDay(k, v) {
+    if (v) state[k] = v; else delete state[k];
+  }
+
+  function paint() {
+    Array.prototype.forEach.call(document.querySelectorAll('.day[data-iso]'), function (c) {
+      var v = state[c.dataset.iso];
+      c.classList.remove('v-R', 'v-A', 'v-G');
+      if (v) c.classList.add('v-' + v);
+    });
+  }
+
+  /* ---------- brush + quick fill ---------- */
+  function wireBrush() {
+    Array.prototype.forEach.call($('brush-bar').querySelectorAll('.brush'), function (b) {
+      b.addEventListener('click', function () {
+        brush = b.dataset.v;
+        Array.prototype.forEach.call($('brush-bar').querySelectorAll('.brush'), function (x) {
+          x.classList.toggle('is-on', x === b);
+        });
+      });
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll('.qbtn'), function (b) {
+      b.addEventListener('click', function () {
+        var q = b.dataset.q;
+        if (q === 'clear') {
+          if (!confirm('Clear the whole calendar?')) return;
+          state = {};
+        }
+        days.forEach(function (d) {
+          if (q === 'all-G') setDay(d.iso, 'G');
+          if (q === 'all-R') setDay(d.iso, 'R');
+          if (q === 'wknd-G' && (d.dow >= 4 || d.dow === 0)) setDay(d.iso, 'G');
+          if (q === 'week-R' && d.dow >= 1 && d.dow <= 3) setDay(d.iso, 'R');
+        });
+        paint(); summarise(); save();
+      });
+    });
+  }
+
+  /* ---------- summary ---------- */
+  function counts() {
+    var c = { R: 0, A: 0, G: 0, none: 0 };
+    days.forEach(function (d) {
+      var v = state[d.iso];
+      if (v === 'R') c.R++;
+      else if (v === 'A') c.A++;
+      else if (v === 'G') c.G++;
+      else c.none++;
+    });
+    return c;
+  }
+
+  /* Score every Fri–Mon window: green 2, amber 1, red kills it */
+  function windows() {
+    var byIso = {};
+    days.forEach(function (d) { byIso[d.iso] = d; });
+    var out = [];
+
+    days.forEach(function (d) {
+      if (d.dow !== 4) return;               // Fridays only
+      var run = [d.iso];
+      var nd = new Date(d.date);
+      for (var i = 0; i < 3; i++) {
+        nd.setDate(nd.getDate() + 1);
+        var k = iso(nd);
+        if (!byIso[k]) return;               // runs past the window
+        run.push(k);
+      }
+      var score = 0, dead = false, unset = 0;
+      run.forEach(function (k) {
+        var v = state[k];
+        if (v === 'R') dead = true;
+        else if (v === 'G') score += 2;
+        else if (v === 'A') score += 1;
+        else unset++;
+      });
+      out.push({
+        start: d, run: run, score: score, dead: dead, unset: unset,
+        flagged: FLAGGED.indexOf(d.iso) !== -1
+      });
+    });
+    return out;
+  }
+
+  function fmtWindow(w) {
+    var a = w.start.date;
+    var b = new Date(a); b.setDate(b.getDate() + 3);
+    var sameMonth = a.getMonth() === b.getMonth();
+    return a.getDate() + (sameMonth ? '' : ' ' + MONTHS[a.getMonth()].slice(0, 3)) +
+           '–' + b.getDate() + ' ' + MONTHS[b.getMonth()].slice(0, 3);
+  }
+
+  function summarise() {
+    var c = counts();
+    var strip = $('sum-strip');
+    strip.innerHTML = '';
+    [['G', c.G, 'Green days'], ['A', c.A, 'Amber days'],
+     ['R', c.R, 'Red days'], ['N', c.none, 'Not marked']].forEach(function (x) {
+      var d = document.createElement('div');
+      d.className = 'sum-cell s-' + x[0];
+      d.innerHTML = '<div class="s-num">' + x[1] + '</div><div class="s-lab">' + x[2] + '</div>';
+      strip.appendChild(d);
+    });
+
+    var ws = windows().filter(function (w) { return !w.dead && w.unset === 0; });
+    ws.sort(function (a, b) { return b.score - a.score; });
+
+    var box = $('windows-box');
+    if (!ws.length) {
+      box.innerHTML = '<div class="callout"><div class="co-title">NO CLEAR WEEKENDS YET</div>' +
+        '<p>Once you\'ve marked up the calendar, the Friday-to-Monday weekends that work for you will be listed here.</p></div>';
+      return;
+    }
+
+    var top = ws.slice(0, 6);
+    var rows = top.map(function (w) {
+      var q = w.score === 8 ? 'All green' : (w.score >= 6 ? 'Mostly green' : 'Workable');
+      return '<tr' + (w.flagged ? ' class="gold-row"' : '') + '><td>' + fmtWindow(w) + '</td>' +
+             '<td>' + (w.flagged ? 'Bank holiday weekend' : 'Normal weekend') + '</td>' +
+             '<td class="num">' + q + '</td></tr>';
+    }).join('');
+
+    box.innerHTML =
+      '<h3 class="sub-ribbon">Weekends that work for you — ' + ws.length + ' of 15</h3>' +
+      '<table class="tee-sheet"><caption>Friday to Monday, best first</caption>' +
+      '<thead><tr><th>Weekend</th><th>Type</th><th class="num">How good</th></tr></thead>' +
+      '<tbody>' + rows + '</tbody></table>' +
+      (ws.length > 6 ? '<p class="wx-note" style="text-align:left;">Showing the best six. All ' + ws.length + ' get sent.</p>' : '');
+  }
+
+  /* ---------- payload ---------- */
+  function payload() {
+    var c = counts();
+    var ws = windows().filter(function (w) { return !w.dead && w.unset === 0; });
+    ws.sort(function (a, b) { return b.score - a.score; });
+    return {
+      name: who,
+      dates: days.map(function (d) { return d.iso; }),
+      values: days.map(function (d) { return state[d.iso] || ''; }),
+      counts: { G: c.G, A: c.A, R: c.R, none: c.none },
+      best: ws.length ? ws.slice(0, 3).map(fmtWindow).join('; ') : 'none',
+      allGood: ws.map(fmtWindow).join('; ')
+    };
+  }
+
+  function asText() {
+    var p = payload();
+    var lines = ['MISTERS 27 — ' + (p.name || 'Unnamed'),
+                 'Green ' + p.counts.G + ' · Amber ' + p.counts.A + ' · Red ' + p.counts.R,
+                 '', 'Weekends that work:'];
+    var ws = p.allGood ? p.allGood.split('; ') : [];
+    if (!ws.length) lines.push('  none marked yet');
+    ws.forEach(function (w) { lines.push('  ' + w); });
+    return lines.join('\n');
+  }
+
+  /* ---------- send ---------- */
+  function wireSend() {
+    $('btn-copy').addEventListener('click', function () {
+      var t = asText();
+      var done = function () { $('send-status').textContent = 'Copied. Paste it into the group chat.'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(done, fallback);
+      } else { fallback(); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = t; ta.style.position = 'absolute'; ta.style.left = '-9999px';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); }
+        catch (e) { $('send-status').textContent = 'Could not copy automatically — screenshot it instead.'; }
+        document.body.removeChild(ta);
+      }
+    });
+
+    $('btn-send').addEventListener('click', function () {
+      if (!who) { $('send-status').textContent = 'Pick your name first.'; return; }
+      var c = counts();
+      if (c.none === days.length) { $('send-status').textContent = 'Mark some days before sending.'; return; }
+      if (c.none > 0 && !confirm(c.none + ' days are still unmarked. Send anyway?')) return;
+
+      if (!SHEET_ENDPOINT) {
+        $('send-status').innerHTML = 'The sheet is not connected yet — use <strong>Copy for the group chat</strong> instead and paste it in.';
+        return;
+      }
+
+      $('btn-send').disabled = true;
+      $('send-status').textContent = 'Sending…';
+
+      fetch(SHEET_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload())
+      }).then(function () {
+        $('send-status').innerHTML = '<strong>Sent.</strong> Thanks — change it and send again any time.';
+        $('btn-send').disabled = false;
+      }).catch(function () {
+        $('send-status').innerHTML = 'That did not go through. Use <strong>Copy for the group chat</strong> instead.';
+        $('btn-send').disabled = false;
+      });
+    });
+  }
+
+  buildNames();
+  buildCal();
+  wireBrush();
+  wireSend();
+  paint();
+  summarise();
+})();
+</script>
+
+</body>
+</html>
