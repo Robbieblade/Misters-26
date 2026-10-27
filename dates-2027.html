@@ -514,17 +514,37 @@ var FLAGGED = ['2027-05-28','2027-05-29','2027-05-30','2027-05-31',
       $('btn-send').disabled = true;
       $('send-status').textContent = 'Sending…';
 
+      // Deliberately NOT no-cors. An Apps Script web app deployed to
+      // "Anyone" sends CORS headers, and text/plain keeps this a simple
+      // request with no preflight — so we can actually read the reply and
+      // tell people the truth. no-cors would hide every failure behind a
+      // cheerful "Sent."
+      var failed = function (why) {
+        $('send-status').innerHTML = 'That did not save' + (why ? ' (' + why + ')' : '') +
+          '. Your marks are still here — use <strong>Copy for the group chat</strong> ' +
+          'and paste it in, then tell Rob.';
+        $('btn-send').disabled = false;
+      };
+
       fetch(SHEET_ENDPOINT, {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload())
-      }).then(function () {
-        $('send-status').innerHTML = '<strong>Sent.</strong> Thanks — change it and send again any time.';
-        $('btn-send').disabled = false;
+      }).then(function (res) {
+        return res.text().then(function (txt) {
+          var out = null;
+          try { out = JSON.parse(txt); } catch (e) {}
+          if (out && out.ok) {
+            $('send-status').innerHTML = '<strong>Saved to the sheet.</strong> Change it and send again any time.';
+            $('btn-send').disabled = false;
+          } else if (out && out.error) {
+            failed(String(out.error).slice(0, 120));
+          } else {
+            failed('the sheet did not confirm it');
+          }
+        });
       }).catch(function () {
-        $('send-status').innerHTML = 'That did not go through. Use <strong>Copy for the group chat</strong> instead.';
-        $('btn-send').disabled = false;
+        failed('could not reach the sheet');
       });
     });
   }
